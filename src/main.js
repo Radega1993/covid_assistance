@@ -5,7 +5,8 @@ import store from './store'
 import Axios from 'axios'
 
 Vue.prototype.$http = Axios;
-const token = localStorage.getItem('token')
+
+const token = localStorage.getItem('user-token')
 if (token) {
   Vue.prototype.$http.defaults.headers.common['Authorization'] = token
 }
